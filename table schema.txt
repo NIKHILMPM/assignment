@@ -1,0 +1,13 @@
+CREATE TABLE users (
+    uid SERIAL PRIMARY KEY,
+    username VARCHAR(250),
+    email VARCHAR(250),
+    password VARCHAR(250)
+);
+
+CREATE TABLE report (
+    rid SERIAL PRIMARY KEY,
+    uid INT REFERENCES users(uid),
+    city VARCHAR(250),
+    city_data JSON
+);
